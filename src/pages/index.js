@@ -26,6 +26,7 @@ const AsyncDemo = Loadable({
 const ContainerView = styled.div`
   display: flex;
   flex: 1;
+  flex-direction: column;
 `;
 
 const SectionView = styled.div`

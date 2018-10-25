@@ -7,6 +7,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { ThemeProvider, injectGlobal } from 'styled-components';
+import { Provider } from 'mobx-react';
+import RootStore from './models';
 import history from './utils/history';
 import Router from './router';
 import theme from './styles';
@@ -55,8 +57,10 @@ injectGlobal`
 
 console.log(process.env);
 ReactDOM.render(
-  <ThemeProvider theme={theme}>
-    <Router history={history} />
-  </ThemeProvider>,
+  <Provider rootStore={RootStore}>
+    <ThemeProvider theme={theme}>
+      <Router history={history} />
+    </ThemeProvider>
+  </Provider>,
   document.getElementById('root'),
 );

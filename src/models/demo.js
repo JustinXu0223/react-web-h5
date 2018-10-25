@@ -46,4 +46,4 @@ class DemoStore {
   }
 }
 
-export default new DemoStore();
+export default DemoStore;

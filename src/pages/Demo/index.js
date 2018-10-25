@@ -5,11 +5,10 @@
  * @author JUSTIN XU
  */
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
-import { observer } from 'mobx-react';
-import DemoStore from '@/models/demo';
+import { observer, inject } from 'mobx-react';
 
 // components
 
@@ -22,25 +21,37 @@ const Text = styled.div`
 const Button = styled.button`
 `;
 
+@inject(({ rootStore }) => ({
+  demoStore: rootStore.demoStore,
+}))
 @observer
 class MobxDemo extends React.Component {
   render() {
+    const {
+      props: {
+        demoStore,
+      },
+    } = this;
     return (
       <ContainerView>
         <Helmet>
           <title>Demo</title>
         </Helmet>
-        <Text>Counter: {DemoStore.counter}</Text>
-        <Text>Total clicks: {DemoStore.total}</Text>
-        <Button onClick={DemoStore.increase}>+</Button>
-        <Button onClick={DemoStore.decrease}>-</Button>
+        <Text>Counter: {demoStore.counter}</Text>
+        <Text>Total clicks: {demoStore.total}</Text>
+        <Button onClick={demoStore.increase}>+</Button>
+        <Button onClick={demoStore.decrease}>-</Button>
       </ContainerView>
     );
   }
 }
 
-MobxDemo.defaultProps = {};
+MobxDemo.defaultProps = {
+  demoStore: {},
+};
 
-MobxDemo.propTypes = {};
+MobxDemo.propTypes = {
+  demoStore: PropTypes.objectOf(PropTypes.any),
+};
 
 export default MobxDemo;
