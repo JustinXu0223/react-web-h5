@@ -19,7 +19,7 @@ const ServeError = {
 
 const instance = axios.create({
   baseURL: BASE_URL,
-  timeout: 10000,
+  timeout: 5000,
 });
 
 // Add a request interceptor

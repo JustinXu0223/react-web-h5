@@ -110,9 +110,9 @@ export function transformKeyword(value, keyword) {
 }
 
 // 防止重复点击
-export const noDoubleHandle = {
+export const noDoublePress = {
   lastPressTime: 1,
-  onHandle(callback) {
+  onPress(callback) {
     const curTime = new Date().getTime();
     if (curTime - this.lastPressTime > 500) {
       this.lastPressTime = curTime;
