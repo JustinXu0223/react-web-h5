@@ -1,5 +1,17 @@
 const isDev = process.env.NODE_ENV !== 'production';
 
+const plugins = [
+  "transform-decorators-legacy",
+  ["transform-runtime"],
+  ["import", {libraryName: "antd-mobile", style: true}],
+  ["babel-plugin-styled-components", {"displayName": isDev, "fileName": isDev}],
+];
+
+// 生产
+if (!isDev) {
+  plugins.push(["transform-remove-console", { "exclude": ["error", "warn"] }]);
+}
+
 module.exports = {
   presets: [
     [
@@ -29,10 +41,5 @@ module.exports = {
       ]
     }
   },
-  plugins: [
-    "transform-decorators-legacy",
-    ["transform-runtime"],
-    ["import", {libraryName: "antd-mobile", style: true}],
-    ["babel-plugin-styled-components", {"displayName": isDev, "fileName": isDev}],
-  ]
+  plugins,
 };

@@ -56,6 +56,9 @@ injectGlobal`
 `;
 
 console.log(process.env);
+console.warn(process.env);
+console.error(process.env);
+console.info(process.env);
 ReactDOM.render(
   <Provider rootStore={RootStore}>
     <ThemeProvider theme={theme}>
