@@ -8,7 +8,7 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import routers from '@/constants/routers';
+import routers from 'constants/routers';
 
 const ContainerView = styled.div`
   height: 44px;

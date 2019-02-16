@@ -7,10 +7,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { px2rem } from '@/utils/base';
+import { px2rem } from 'utils/base';
 
 // static source
-import NotDataIcon from '@/assets/not-data.png';
+import NotDataIcon from 'assets/not-data.png';
 
 // components
 import ImgIcon from './ImgIcon';

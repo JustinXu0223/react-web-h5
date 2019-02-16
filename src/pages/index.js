@@ -8,11 +8,11 @@ import React from 'react';
 import styled from 'styled-components';
 import Loadable from 'react-loadable';
 import { Route, Switch, Redirect } from 'react-router-dom';
-import routers from '@/constants/routers';
+import routers from 'constants/routers';
 
 // components
-import Header from '@/components/Layout/Header';
-import LoadingComponent from '@/components/Loading';
+import Header from 'components/Layout/Header';
+import LoadingComponent from 'components/Loading';
 
 const AsyncHome = Loadable({
   loader: () => import('./Home'),

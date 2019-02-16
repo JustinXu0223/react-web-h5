@@ -11,10 +11,10 @@ import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
 
 // static source
-import NotFoundIcon from '@/assets/404.png';
+import NotFoundIcon from 'assets/404.png';
 
 // components
-import NotDataComponent from '@/components/NotData';
+import NotDataComponent from 'components/NotData';
 
 const ContainerView = styled.div`
   display: flex;
