@@ -8,7 +8,7 @@
   "private": true,
   "scripts": {
     "precommit-msg": "echo 'Pre-commit checks...' && exit 0",
-    "lint": "eslint \"**/*.{js,jsx}\" --quiet",
+    "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
     "dev": "webpack-dev-server --progress --colors --config build/webpack.dev.js",
     "start": "env-cmd start:dev yarn dev",
     "release": "webpack --progress --colors --config build/webpack.prod.js --profile --json > stats.json",
