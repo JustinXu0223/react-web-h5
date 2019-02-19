@@ -1,15 +1,11 @@
-/* eslint import/no-extraneous-dependencies: 0 */
 const merge = require('webpack-merge');
 const webpack = require('webpack');
-const base = require('./webpack.base.js');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
+
+const base = require('./webpack.base.js');
 const utils = require('./webpack.util.js');
 
 const port = 8080;
-
-const {
-  OUTPUT_DIR = '',
-} = process.env;
 
 module.exports = merge(base, {
   mode: 'development',
@@ -38,7 +34,7 @@ module.exports = merge(base, {
   ],
   devServer: {
     headers: { 'Access-Control-Allow-Origin': '*' },
-    contentBase: utils.resolvePath(OUTPUT_DIR),
+    contentBase: utils.resolvePath(process.env.OUTPUT_DIR),
     publicPath: '/',
     clientLogLevel: 'error',
     hot: true,
